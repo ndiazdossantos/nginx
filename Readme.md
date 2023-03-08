@@ -8,6 +8,12 @@ Una vez realizado nuestro despliegue del servicio **Ngix** correspondientes con 
 
 Para ello debemos crear un fichero llamado [```blacklist.conf```]() donde añadimos las políticas restrictivas sobre las IPS que querramos indicar.
 
+```yml
+
+deny 192.168.1.0/24;
+allow all;
+
+```
 Para ello debemos ir al fichero de configuración [```nginx.conf```](https://github.com/ndiazdossantos/nginx/blob/master/nginx.conf) y en el apartado server añadir un include del fichero de de la blacklist creada previamente.
 
 ```yml
